@@ -1,0 +1,58 @@
+﻿<Window x:Class="BusNetworkSystem.Custom.CustomMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusNetworkSystem.Custom"
+        mc:Ignorable="d"
+        Title="CustomMessageBox" Height="150" Width="300"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Border CornerRadius="15"
+            Background="#211F22"
+            Effect="{StaticResource DropShadowEffect}">
+        <Grid>
+            <TextBlock x:Name="IconText"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Margin="20,20,0,0"
+                       FontSize="24"
+                       Foreground="White"/>
+            <TextBlock x:Name="MessageText"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextWrapping="Wrap"
+                       Foreground="#DCDCDC"
+                       FontSize="16"
+                       Margin="20"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Margin="10">
+                <Button x:Name="OkButton" 
+                        Content="OK" 
+                        Width="120" 
+                        Margin="5" 
+                        Background="#211F22"
+                        Foreground="White"
+                        Click="OkButton_Click"
+                        VerticalContentAlignment="Center"
+                        Style="{StaticResource RoundedButtonStyle}"
+                        Effect="{StaticResource DropShadowEffect}"/>
+                <Button x:Name="CancelButton" 
+                        Content="Отмена" 
+                        Width="120" 
+                        Margin="5" 
+                        Background="#211F22"
+                        Foreground="White"
+                        Click="CancelButton_Click"
+                        VerticalContentAlignment="Center"
+                        Style="{StaticResource RoundedButtonStyle}"
+                        Effect="{StaticResource DropShadowEffect}"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
