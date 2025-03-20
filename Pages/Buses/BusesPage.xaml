@@ -87,6 +87,12 @@
                 Background="Transparent" 
                 Foreground="#DCDCDC"
                 Style="{StaticResource MenuButton}"/>
+        <TextBlock Text="Автобусный парк"
+                   Foreground="#DCDCDC"
+                   Margin="50, 0, 0, 0"
+                   FontSize="25"
+                   VerticalAlignment="Center"
+                   Style="{StaticResource HeaderText}"/>
 
         <!-- Основной контент -->
         <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
