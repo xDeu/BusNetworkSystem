@@ -1,4 +1,4 @@
-﻿<Page x:Class="BusNetworkSystem.Pages.SchedulePage"
+﻿<Page x:Class="BusNetworkSystem.Pages.Schedules.SchedulePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -199,7 +199,10 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Маршрут" 
                                              Binding="{Binding RouteNumber}" 
-                                             Width="*"/>
+                                             Width="Auto"/>
+                        <DataGridTextColumn Header="Автобус"
+                                             Binding="{Binding Model}"
+                                             Width="Auto"/>
                         <DataGridTextColumn Header="Направление" 
                                              Binding="{Binding Direction}" 
                                              Width="2*"/>
@@ -208,6 +211,9 @@
                                              Width="*"/>
                         <DataGridTextColumn Header="Время прибытия" 
                                              Binding="{Binding ArrivalTime}" 
+                                             Width="*"/>
+                        <DataGridTextColumn Header="Свободных мест"
+                                             Binding="{Binding AvailibleSeats}"
                                              Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>

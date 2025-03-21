@@ -78,7 +78,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\LoginAndRegisPage.xaml">
+    <Page Include="Pages\LoginRegistration\LoginAndRegisPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -90,7 +90,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\SchedulePage.xaml">
+    <Page Include="Pages\Schedules\SchedulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,7 +100,7 @@
     <Compile Include="Pages\Buses\BusesPage.xaml.cs">
       <DependentUpon>BusesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\LoginAndRegisPage.xaml.cs">
+    <Compile Include="Pages\LoginRegistration\LoginAndRegisPage.xaml.cs">
       <DependentUpon>LoginAndRegisPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PersonalCabinet\PasswordChange.xaml.cs">
@@ -109,7 +109,9 @@
     <Compile Include="Pages\PersonalCabinet\ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SchedulePage.xaml.cs">
+    <Compile Include="Pages\PersonalCabinet\User.cs" />
+    <Compile Include="Pages\Schedules\Schedule.cs" />
+    <Compile Include="Pages\Schedules\SchedulePage.xaml.cs">
       <DependentUpon>SchedulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">

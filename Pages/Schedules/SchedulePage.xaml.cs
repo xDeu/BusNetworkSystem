@@ -28,7 +28,7 @@ namespace BusNetworkSystem.Pages
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            CurrentTime.Text = "Текущее время: " + DateTime.Now.ToString("T");
+            CurrentTime.Text = DateTime.Now.ToString("M") + ", " + DateTime.Now.ToString("T");
         }
 
         private void ToggleMenu(object sender, RoutedEventArgs e)

@@ -26,20 +26,25 @@ namespace BusNetworkSystem.Pages.Buses
         {
             buses = new List<Bus>
             {
-                new Bus { ImagePath = "\\Pages\\Buses\\busImages\\bus1.jpg", Info = "Автобус 1: 50 мест, дизельный", Description = "Это надежный автобус для междугородних поездок." },
-                new Bus { ImagePath = "\\Pages\\Buses\\busImages\\bus2.jpg", Info = "Автобус 2: 40 мест, электрический", Description = "Экологически чистый автобус с низким уровнем шума." },
-                new Bus { ImagePath = "\\Pages\\Buses\\busImages\\bus3.jpg", Info = "Автобус 3: 30 мест, газовый", Description = "Идеален для городских маршрутов." }
+                new Bus { ImagePath = "\\Pages\\Buses\\busImages\\bus1.jpg", LicencePlate = "Р934ВХ12", Model = "ППаЗ 36124", Capacity = 50, YearOfManufacture = 1996 },
+                new Bus { ImagePath = "\\Pages\\Buses\\busImages\\bus2.jpg", LicencePlate = "Н846ОО21", Model = "МАЗ Победа", Capacity = 70, YearOfManufacture = 2005 },
+                new Bus { ImagePath = "\\Pages\\Buses\\busImages\\bus3.jpg", LicencePlate = "М945МИ51", Model = "Ford Galaxy", Capacity = 30, YearOfManufacture = 2015 }
             };
         }
 
         private void DisplayBus(int index)
         {
             BusImage.Source = new BitmapImage(new Uri(buses[index].ImagePath, UriKind.Relative));
-            BusInfo.Text = buses[index].Info;
-            BusDescription.Text = buses[index].Description;
-            BusImage.Opacity = 1; // Убедитесь, что изображение видно
-            BusInfo.Opacity = 1; // Убедитесь, что текст видно
-            BusDescription.Opacity = 1;
+            LicencePlate.Text = "Номерной знак: " + buses[index].LicencePlate;
+            Model.Text = "Модель: " + buses[index].Model;
+            Capacity.Text = "Вместимость: " + Convert.ToString(buses[index].Capacity);
+            YearOfManufacture.Text = "Год производства: " + Convert.ToString(buses[index].YearOfManufacture);
+
+            BusImage.Opacity = 1;
+            LicencePlate.Opacity = 1;
+            Model.Opacity = 1;
+            Capacity.Opacity = 1;
+            YearOfManufacture.Opacity = 1;
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
@@ -68,12 +73,16 @@ namespace BusNetworkSystem.Pages.Buses
                 DisplayBus(currentIndex);
                 DoubleAnimation fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(0.5));
                 BusImage.BeginAnimation(UIElement.OpacityProperty, fadeIn);
-                BusInfo.BeginAnimation(UIElement.OpacityProperty, fadeIn);
-                BusDescription.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+                LicencePlate.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+                Model.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+                Capacity.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+                YearOfManufacture.BeginAnimation(UIElement.OpacityProperty, fadeIn);
             };
             BusImage.BeginAnimation(UIElement.OpacityProperty, fadeOut);
-            BusInfo.BeginAnimation(UIElement.OpacityProperty, fadeOut);
-            BusDescription.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            LicencePlate.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            Model.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            Capacity.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            YearOfManufacture.BeginAnimation(UIElement.OpacityProperty, fadeOut);
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

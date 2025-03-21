@@ -126,7 +126,7 @@
                         </Grid.ColumnDefinitions>
 
                         <!-- Имя пользователя -->
-                        <TextBlock Text="Имя пользователя: John Doe" 
+                        <TextBlock Text="Имя пользователя: Адам Арабов" 
                                    Foreground="#DCDCDC" 
                                    FontSize="16"
                                    Grid.Row="0" Grid.Column="0"/>
@@ -140,7 +140,7 @@
                                 Style="{StaticResource RegularButton}"/>
 
                         <!-- Электронная почта -->
-                        <TextBlock Text="Электронная почта: john.doe@example.com" 
+                        <TextBlock Text="Электронная почта: examplemail@example.com" 
                                    Foreground="#DCDCDC" 
                                    FontSize="16"
                                    Grid.Row="1" Grid.Column="0"/>
@@ -155,7 +155,7 @@
                                 Style="{StaticResource RegularButton}"/>
                         
                         <!-- Номер телефона -->
-                        <TextBlock Text="Номер телефона: +79661569036"
+                        <TextBlock Text="Номер телефона: +79999999999"
                                    Foreground="#DCDCDC"
                                    FontSize="16"
                                    Grid.Row="2" Grid.Column="0"/>
