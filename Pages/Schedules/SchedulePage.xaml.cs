@@ -1,4 +1,5 @@
 ﻿using BusNetworkSystem.Pages.LoginRegistration;
+using BusNetworkSystem.Custom;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,7 +15,7 @@ namespace BusNetworkSystem.Pages.Schedules
     {
         public MainWindow mainWindow;
         private DispatcherTimer _timer;
-        Custom.CustomMessageBox messageBox;
+        CustomMessageBox messageBox;
 
         public SchedulePage(MainWindow _mainWindow)
         {

@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using BusNetworkSystem.Custom;
 
 namespace BusNetworkSystem.Pages.PersonalCabinet
 {
@@ -10,7 +11,8 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
     public partial class ProfilePage : Page
     {
         public MainWindow mainWindow;
-        Custom.CustomMessageBox messageBox;
+        CustomMessageBox messageBox;
+        TopupBalance _t;
 
         public ProfilePage(MainWindow _mainWindow)
         {
@@ -25,24 +27,24 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
 
         private void NameChange(object sender, RoutedEventArgs e)
         {
-            messageBox = new Custom.CustomMessageBox("Изменение имени", "", MessageBoxImage.Asterisk);
+            messageBox = new CustomMessageBox("Изменение имени", "", MessageBoxImage.Asterisk);
             messageBox.ShowDialog();
         }
 
         private void MailChange(object sender, RoutedEventArgs e)
         {
-            messageBox = new Custom.CustomMessageBox("Изменение почты", "", MessageBoxImage.Asterisk);
+            messageBox = new CustomMessageBox("Изменение почты", "", MessageBoxImage.Asterisk);
             messageBox.ShowDialog();
         }
         private void PhoneChange(object sender, RoutedEventArgs e)
         {
-            messageBox = new Custom.CustomMessageBox("Изменение номера", "", MessageBoxImage.Asterisk);
+            messageBox = new CustomMessageBox("Изменение номера", "", MessageBoxImage.Asterisk);
             messageBox.ShowDialog();
         }
 
         private void PasswordChange(object sender, RoutedEventArgs e)
         {
-            messageBox = new Custom.CustomMessageBox("Изменение пароля", "", MessageBoxImage.Asterisk);
+            messageBox = new CustomMessageBox("Изменение пароля", "", MessageBoxImage.Asterisk);
             messageBox.ShowDialog();
         }
         private void TogglePasswordButton_Click(object sender, RoutedEventArgs e)
@@ -61,6 +63,12 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
                 PasswordTextBox.Visibility = Visibility.Collapsed;
                 PasswordBox.Visibility = Visibility.Visible;
             }
+        }
+
+        private void RotatingIconButton_Click(object sender, RoutedEventArgs e)
+        {
+            _t = new TopupBalance();
+            _t.Show();
         }
     }
 }

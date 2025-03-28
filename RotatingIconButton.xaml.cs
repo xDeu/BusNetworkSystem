@@ -31,12 +31,24 @@ namespace BusNetworkSystem
             get => (ICommand)GetValue(CommandProperty);
             set => SetValue(CommandProperty, value);
         }
+        public static readonly DependencyProperty CommandParameterProperty = Button.CommandParameterProperty.AddOwner(typeof(RotatingIconButton));
+        public object CommandParameter
+        {
+            get => GetValue(CommandParameterProperty);
+            set => SetValue(CommandParameterProperty, value);
+        }
+        public event RoutedEventHandler Click
+        {
+            add => MainButton.Click += value;
+            remove => MainButton.Click -= value;
+        }
 
         public RotatingIconButton()
         {
             InitializeComponent();
             MainButton.Content = ButtonText;
             MainButton.Command = Command;
+            MainButton.CommandParameter = CommandParameter;
         }
     }
 }

@@ -7,53 +7,70 @@
 
     <UserControl.Resources>
         <ControlTemplate x:Key="RotatingButtonTemplate" TargetType="Button">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Path x:Name="PART_PlusIcon" 
-                      Data="M0,8 L18,8 M8,0 L8,18"
-                      Stroke="#DCDCDC"
-                      StrokeThickness="2"
-                      Width="16" Height="16"
-                      RenderTransformOrigin="0.5,0.5"
-                      Margin="0,0,5,0">
-                    <Path.RenderTransform>
-                        <RotateTransform Angle="0"/>
-                    </Path.RenderTransform>
-                </Path>
+            <Border x:Name="MainBorder"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="5"
+                    SnapsToDevicePixels="True">
+                <Grid x:Name="RootGrid" Background="Transparent">
+                    <StackPanel Orientation="Horizontal" 
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center">
+                        <Path x:Name="PART_PlusIcon" 
+                              Data="M0,8 L18,8 M8,0 L8,18"
+                              Stroke="#DCDCDC"
+                              StrokeThickness="2"
+                              Width="16" Height="16"
+                              RenderTransformOrigin="0.5,0.5"
+                              Margin="0,0,5,0">
+                            <Path.RenderTransform>
+                                <RotateTransform Angle="0"/>
+                            </Path.RenderTransform>
+                        </Path>
 
-                <TextBlock Text="{TemplateBinding Content}"
-                           VerticalAlignment="Center"/>
-            </StackPanel>
+                        <ContentPresenter x:Name="ContentPart" 
+                                        VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
 
             <ControlTemplate.Triggers>
-                <EventTrigger RoutedEvent="MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation
-                                Storyboard.TargetName="PART_PlusIcon"
-                                Storyboard.TargetProperty="(Path.RenderTransform).(RotateTransform.Angle)"
-                                To="360" Duration="0:0:0.5">
-                                <DoubleAnimation.EasingFunction>
-                                    <CubicEase EasingMode="EaseInOut"/>
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetName="PART_PlusIcon"
+                                    Storyboard.TargetProperty="(Path.RenderTransform).(RotateTransform.Angle)"
+                                    To="360" Duration="0:0:0.5">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase EasingMode="EaseInOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetName="PART_PlusIcon"
+                                    Storyboard.TargetProperty="(Path.RenderTransform).(RotateTransform.Angle)"
+                                    To="0" Duration="0:0:0.5">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase EasingMode="EaseInOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
 
-                <EventTrigger RoutedEvent="MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation
-                                Storyboard.TargetName="PART_PlusIcon"
-                                Storyboard.TargetProperty="(Path.RenderTransform).(RotateTransform.Angle)"
-                                To="0" Duration="0:0:0.5">
-                                <DoubleAnimation.EasingFunction>
-                                    <CubicEase EasingMode="EaseInOut"/>
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
+                    <Setter TargetName="MainBorder" Property="Background" Value="#2E2C30"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="MainBorder" Property="Background" Value="#1A181B"/>
+                </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </UserControl.Resources>

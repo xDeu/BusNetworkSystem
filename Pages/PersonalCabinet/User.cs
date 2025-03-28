@@ -12,5 +12,6 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
         public string Email { get; set; }
         public string PhoneNum { get; set; }
         public DateTime RegistrationDate { get; set; }
+        public float Balance { get; set; }
     }
 }

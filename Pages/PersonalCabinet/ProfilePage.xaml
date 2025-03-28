@@ -163,7 +163,7 @@
                                 Style="{StaticResource RegularButton}"/>
 
                             <!-- Номер телефона -->
-                            <TextBlock Text="Номер телефона: +79999999999"
+                            <TextBlock Text="Номер телефона: number_placeholder"
                                    Foreground="#DCDCDC"
                                    FontSize="16"
                                    Grid.Row="2" Grid.Column="0"/>
@@ -187,7 +187,7 @@
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <PasswordBox x:Name="PasswordBox" 
-                                         Password="password123" 
+                                         Password="pass_holder" 
                                          Foreground="#DCDCDC" 
                                          Background="Transparent" 
                                          BorderThickness="0"
@@ -195,7 +195,7 @@
                                          VerticalAlignment="Center"
                                          Visibility="Visible"/>
                                 <TextBox x:Name="PasswordTextBox" 
-                                      Text="password123" 
+                                      Text="pass_holder" 
                                       Foreground="#DCDCDC" 
                                       Background="Transparent" 
                                       BorderThickness="0"
@@ -233,7 +233,7 @@
                               Grid.Column="1">
                             <StackPanel VerticalAlignment="Top"
                                         HorizontalAlignment="Left"
-                                        Margin="5">
+                                        Margin="20">
                                 <TextBlock Text="Баланс:"
                                            FontSize="35"
                                            Foreground="#DCDCDC"
@@ -244,6 +244,7 @@
                                                           Height="50"
                                                           Background="#211F22"
                                                           Margin="0, 10, 0, 0"
+                                                          Click="RotatingIconButton_Click"
                                                           Effect="{StaticResource DropShadowEffect}"/>
                             </StackPanel>
                         </Grid>

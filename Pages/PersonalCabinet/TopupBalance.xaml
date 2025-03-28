@@ -1,0 +1,82 @@
+﻿<Window x:Class="BusNetworkSystem.Pages.PersonalCabinet.TopupBalance"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusNetworkSystem"
+        mc:Ignorable="d"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Title="TopupBalance" Height="200" Width="400">
+    <Border CornerRadius="0,0,5,5"
+            BorderBrush="Transparent"
+            Background="#211F22"
+            Effect="{StaticResource DropShadowEffect}">
+        <Grid Margin="5">
+            <TextBlock Text="Сумма пополнения:"
+                           Foreground="#DCDCDC"
+                           FontSize="30"
+                           Margin="15"/>
+            <TextBox x:Name="TopupAmount"
+                         Background="#211F22"
+                         BorderBrush="Transparent"
+                         Height="25"
+                         Opacity="0"
+                         Margin="15,5,15,0" TextChanged="TopupAmount_TextChanged"/>
+            <TextBlock x:Name="PlaceholderText"
+                           Text="Введите сумму..."
+                           Foreground="#888888"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="16,0,0,0"
+                           FontSize="20"
+                           IsHitTestVisible="False">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Visibility" Value="Visible"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=TopupAmount}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Text, ElementName=TopupAmount}" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Text, ElementName=TopupAmount}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Border BorderBrush="#888888"
+                        BorderThickness="1"
+                        Height="2"
+                        Margin="15,30,15,0"/>
+            <Grid VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <local:RotatingIconButton ButtonText="Пополнить"
+                                          Background="#211F22"
+                                          Margin="15"
+                                          Height="30"
+                                          Width="180"
+                                          HorizontalAlignment="Center"
+                                          Grid.Column="0"
+                                          Effect="{StaticResource DropShadowEffect}" Click="RotatingIconButton_Click"/>
+                <Button x:Name="GoBackButton"
+                        Content="Отмена"
+                        Margin="15"
+                        Height="30"
+                        Width="100"
+                        Background="#211F22"
+                        Foreground="#DCDCDC"
+                        BorderBrush="Transparent" 
+                        HorizontalAlignment="Center"
+                        Grid.Column="1"
+                        Effect="{StaticResource DropShadowEffect}" Click="GoBackButton_Click"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
