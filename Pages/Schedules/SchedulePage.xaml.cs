@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BusNetworkSystem.Pages.LoginRegistration;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
-namespace BusNetworkSystem.Pages
+namespace BusNetworkSystem.Pages.Schedules
 {
     /// <summary>
     /// Логика взаимодействия для SchedulePage.xaml

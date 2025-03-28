@@ -1,4 +1,4 @@
-﻿using BusNetworkSystem.Pages;
+﻿using BusNetworkSystem.Pages.LoginRegistration;
 using System.Windows;
 
 namespace BusNetworkSystem

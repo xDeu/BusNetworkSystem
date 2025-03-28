@@ -4,8 +4,9 @@ using System.Security.Cryptography;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using BusNetworkSystem.Pages.Schedules;
 
-namespace BusNetworkSystem.Pages
+namespace BusNetworkSystem.Pages.LoginRegistration
 {
     /// <summary>
     /// Логика взаимодействия для LoginAndRegisPage.xaml
