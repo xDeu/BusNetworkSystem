@@ -18,11 +18,19 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
         {
             InitializeComponent();
             mainWindow = _mainWindow;
+
+            DisplayText();
         }
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+        private void DisplayText()
+        {
+            UserNameTB.Text = "Имя пользователя: placeholder_name";
+            UserEmailTB.Text = "Электронный адрес: placeholder_email";
+            UserPhoneNumTB.Text = "Номер телефона: placeholde_number";
         }
 
         private void NameChange(object sender, RoutedEventArgs e)
@@ -68,7 +76,7 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
         private void RotatingIconButton_Click(object sender, RoutedEventArgs e)
         {
             _t = new TopupBalance();
-            _t.Show();
+            _t.Show();  
         }
     }
 }

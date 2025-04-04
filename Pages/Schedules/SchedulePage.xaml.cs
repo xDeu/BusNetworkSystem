@@ -14,7 +14,7 @@ namespace BusNetworkSystem.Pages.Schedules
     public partial class SchedulePage : Page
     {
         public MainWindow mainWindow;
-        private DispatcherTimer _timer;
+        private readonly DispatcherTimer _timer;
         CustomMessageBox messageBox;
 
         public SchedulePage(MainWindow _mainWindow)
@@ -22,8 +22,10 @@ namespace BusNetworkSystem.Pages.Schedules
             InitializeComponent();
             mainWindow = _mainWindow;
 
-            _timer = new DispatcherTimer();
-            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
             _timer.Tick += Timer_Tick;
             _timer.Start();
         }
