@@ -134,12 +134,11 @@
                             </Grid.ColumnDefinitions>
 
                             <!-- Имя пользователя -->
-                            <TextBlock Text="Имя пользователя: Адам Арабов" 
+                            <TextBlock x:Name="UserNameTB" 
                                    Foreground="#DCDCDC" 
                                    FontSize="16"
                                    Grid.Row="0" Grid.Column="0"/>
                             <Button Content="Изменить" 
-                                Foreground="#DCDCDC" 
                                 Background="Transparent" 
                                 BorderThickness="0"
                                 FontSize="14"
@@ -148,12 +147,11 @@
                                 Style="{StaticResource RegularButton}"/>
 
                             <!-- Электронная почта -->
-                            <TextBlock Text="Электронная почта: examplemail@example.com" 
+                            <TextBlock x:Name="UserEmailTB" 
                                    Foreground="#DCDCDC" 
                                    FontSize="16"
                                    Grid.Row="1" Grid.Column="0"/>
-                            <Button Content="Изменить" 
-                                Foreground="#DCDCDC" 
+                            <Button Content="Изменить"  
                                 Background="Transparent" 
                                 BorderThickness="0"
                                 FontSize="14"
@@ -163,12 +161,11 @@
                                 Style="{StaticResource RegularButton}"/>
 
                             <!-- Номер телефона -->
-                            <TextBlock Text="Номер телефона: number_placeholder"
+                            <TextBlock x:Name="UserPhoneNumTB"
                                    Foreground="#DCDCDC"
                                    FontSize="16"
                                    Grid.Row="2" Grid.Column="0"/>
                             <Button Content="Изменить"
-                                Foreground="#DCDCDC"
                                 Background="Transparent"
                                 BorderThickness="0"
                                 FontSize="14"
@@ -204,7 +201,6 @@
                                       Visibility="Collapsed"/>
                                 <Button x:Name="TogglePasswordButton" 
                                     Content="👁" 
-                                    Foreground="#DCDCDC" 
                                     Background="Transparent" 
                                     BorderThickness="0"
                                     FontSize="14"
@@ -218,7 +214,6 @@
                             <Button Content="Изменить пароль" 
                                 Width="150" 
                                 Margin="0, 20"
-                                Foreground="#DCDCDC" 
                                 Background="Transparent" 
                                 BorderThickness="0"
                                 FontSize="14"

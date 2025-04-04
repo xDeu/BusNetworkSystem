@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
-        Title="TopupBalance" Height="200" Width="400">
+        Title="TopupBalance" Height="200" Width="430">
     <Border CornerRadius="0,0,5,5"
             BorderBrush="Transparent"
             Background="#211F22"
@@ -19,6 +19,7 @@
                            Margin="15"/>
             <TextBox x:Name="TopupAmount"
                          Background="#211F22"
+                         Foreground="#DCDCDC"
                          BorderBrush="Transparent"
                          Height="25"
                          Opacity="0"
@@ -68,14 +69,9 @@
                 <Button x:Name="GoBackButton"
                         Content="Отмена"
                         Margin="15"
-                        Height="30"
-                        Width="100"
-                        Background="#211F22"
-                        Foreground="#DCDCDC"
-                        BorderBrush="Transparent" 
-                        HorizontalAlignment="Center"
                         Grid.Column="1"
-                        Effect="{StaticResource DropShadowEffect}" Click="GoBackButton_Click"/>
+                        Click="GoBackButton_Click">
+                </Button>
             </Grid>
         </Grid>
     </Border>
