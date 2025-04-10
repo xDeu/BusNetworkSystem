@@ -54,6 +54,11 @@ namespace BusNetworkSystem.Pages.Buses
                 currentIndex++;
                 AnimateTransition();
             }
+            else if (currentIndex == buses.Count - 1 && NextImage.IsPressed)
+            {
+                currentIndex = 0;
+                AnimateTransition();
+            }
         }
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
@@ -61,6 +66,11 @@ namespace BusNetworkSystem.Pages.Buses
             if (currentIndex > 0)
             {
                 currentIndex--;
+                AnimateTransition();
+            }
+            else if (currentIndex == 0 && PreviousImage.IsPressed)
+            {
+                currentIndex = 2;
                 AnimateTransition();
             }
         }

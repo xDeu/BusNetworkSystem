@@ -235,23 +235,17 @@
                 <Button x:Name="ProfileButton"
                         Content="Личный кабинет" 
                         HorizontalContentAlignment="Left" 
-                        Height="50" 
                         FontSize="18" 
                         Padding="15, 0, 0, 0" 
                         Click="GoToProfile"
-                        Background="Transparent"
-                        Foreground="#DCDCDC"
-                        BorderThickness="0"/>
+                        Style="{StaticResource MenuButton}"/>
                 <Button x:Name="BusesButton"
                         Content="Автобусный парк" 
                         HorizontalContentAlignment="Left" 
-                        Height="50" 
                         FontSize="18" 
                         Padding="15, 0, 0, 0" 
                         Click="GoToBuses"
-                        Background="Transparent"
-                        Foreground="#DCDCDC"
-                        BorderThickness="0"/>
+                        Style="{StaticResource MenuButton}"/>
             </StackPanel>
             <Button x:Name="LogOutButton" 
                     HorizontalAlignment="Right" 
