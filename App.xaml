@@ -38,13 +38,14 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#DCDCDC"/>
             <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="50"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 
-                            CornerRadius="5">
+                                CornerRadius="5">
                             <ContentPresenter x:Name="ContentPresenter"
                                           VerticalAlignment="Center"
                                           HorizontalAlignment="Center"
@@ -192,10 +193,10 @@
         </Style>
         <!-- Color="#40000000" for shadowdrop-->
         <DropShadowEffect x:Key="DropShadowEffect" 
-                           BlurRadius="7" 
-                           ShadowDepth="7"
-                           Opacity="0.2"
-                           />
+                          BlurRadius="15" 
+                          ShadowDepth="0"
+                          Opacity="0.2"
+                          />
         <Style x:Name="CoolerButton" TargetType="Button">
             <Setter Property="Background" Value="#211F22"/>
             <Setter Property="Foreground" Value="#DCDCDC"/>

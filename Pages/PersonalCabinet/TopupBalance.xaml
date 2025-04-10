@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
-        Title="TopupBalance" Height="200" Width="430">
+        Title="Пополнение баланса" Height="200" Width="430">
     <Border CornerRadius="0,0,5,5"
             BorderBrush="Transparent"
             Background="#211F22"
@@ -55,7 +55,7 @@
                         Margin="15,30,15,0"/>
             <Grid VerticalAlignment="Bottom">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1.5*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
                 <local:RotatingIconButton ButtonText="Пополнить"
@@ -70,8 +70,7 @@
                         Content="Отмена"
                         Margin="15"
                         Grid.Column="1"
-                        Click="GoBackButton_Click">
-                </Button>
+                        Click="GoBackButton_Click"/>
             </Grid>
         </Grid>
     </Border>
