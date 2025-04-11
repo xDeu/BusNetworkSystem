@@ -110,12 +110,36 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
 
         private void ConfirmChange_Click(object sender, RoutedEventArgs e)
         {
-            box = new CustomMessageBox("Пароль изменён", "Выполнено", MessageBoxImage.Information);
-            box.ShowDialog();
-            if (DialogResult == true)
+            if ((!string.IsNullOrWhiteSpace(OldPassBox.Password) && !string.IsNullOrWhiteSpace(NewPassBox.Password) && !string.IsNullOrWhiteSpace(RepeatPassBox.Password)) && RepeatPassBox.Password == NewPassBox.Password)
             {
+                box = new CustomMessageBox("Пароль изменён", "Выполнено", MessageBoxImage.Information);
+                box.CancelButton.Visibility = Visibility.Collapsed;
+                box.ShowDialog();
                 this.Close();
             }
+            else if (!(RepeatPassBox.Password == NewPassBox.Password))
+            {
+                box = new CustomMessageBox("Повторите правильный пароль", "Ошибка", MessageBoxImage.Error);
+                box.CancelButton.Visibility = Visibility.Collapsed;
+                Opacity = 0.4;
+                box.ShowDialog();
+                Opacity = 1;
+                return;
+            }
+            else
+            {
+                box = new CustomMessageBox("Заполните все поля, чтобы продолжить", "Ошибка", MessageBoxImage.Error);
+                box.CancelButton.Visibility = Visibility.Collapsed;
+                Opacity = 0.4;
+                box.ShowDialog();
+                Opacity = 1;
+                return;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -10,6 +10,23 @@
       Background="#211F22">
 
     <Page.Resources>
+        <!-- DataGrid style -->
+        <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
+            <Setter Property="ColumnHeaderStyle" Value="{DynamicResource ColumnHeaderStyleFancy}"/>
+        </Style>
+        <!-- DataGridColumnHeader style -->
+        <Style x:Key="ColumnHeaderStyleFancy" TargetType="DataGridColumnHeader">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="#211F22"/>
+            <Setter Property="Foreground" Value="#DCDCDC"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Padding" Value="5"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="ToolTip" Value="Click to sort."/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <!-- Стили для текста -->
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="#DCDCDC"/>
@@ -195,6 +212,7 @@
                           RowBackground="#211F22"
                           AlternatingRowBackground="#2E2C2F"
                           Margin="10"
+                          Style="{StaticResource DataGridStyle}"
                           Effect="{StaticResource DropShadowEffect}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Маршрут" 

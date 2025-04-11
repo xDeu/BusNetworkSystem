@@ -27,7 +27,7 @@
                          Background="#211F22"
                          Foreground="#DCDCDC"
                          Height="25"
-                         Margin="15,5,15,0" TextChanged="TopupAmount_TextChanged" SelectionBrush="{x:Null}" FontSize="14"/>
+                         Margin="15,5,15,0" TextChanged="TopupAmount_TextChanged" SelectionBrush="{x:Null}" FontSize="14" BorderBrush="{x:Null}"/>
             <TextBlock x:Name="PlaceholderText"
                            Text="Введите сумму..."
                            Foreground="#888888"

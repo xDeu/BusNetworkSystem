@@ -36,24 +36,32 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
         private void NameChange(object sender, RoutedEventArgs e)
         {
             messageBox = new CustomMessageBox("Изменение имени", "", MessageBoxImage.Asterisk);
+            Opacity = 0.4;
             messageBox.ShowDialog();
+            Opacity = 1;
         }
 
         private void MailChange(object sender, RoutedEventArgs e)
         {
             messageBox = new CustomMessageBox("Изменение почты", "", MessageBoxImage.Asterisk);
+            Opacity = 0.4;
             messageBox.ShowDialog();
+            Opacity = 1;
         }
         private void PhoneChange(object sender, RoutedEventArgs e)
         {
             messageBox = new CustomMessageBox("Изменение номера", "", MessageBoxImage.Asterisk);
+            Opacity = 0.4;
             messageBox.ShowDialog();
+            Opacity = 1;
         }
 
         private void PasswordChange(object sender, RoutedEventArgs e)
         {
-            messageBox = new CustomMessageBox("Изменение пароля", "", MessageBoxImage.Asterisk);
-            messageBox.ShowDialog();
+            var changeWindow = new PasswordChange();
+            Opacity = 0.4;
+            changeWindow.ShowDialog();
+            Opacity = 1;
         }
         private void TogglePasswordButton_Click(object sender, RoutedEventArgs e)
         {

@@ -32,19 +32,25 @@ namespace BusNetworkSystem.Pages.LoginRegistration
             if (string.IsNullOrWhiteSpace(login) && string.IsNullOrWhiteSpace(password))
             {
                 messageBox = new Custom.CustomMessageBox("Пожалуйста, введите логин и пароль.", "Ошибка", MessageBoxImage.Warning);
+                Opacity = 0.4;
                 messageBox.ShowDialog();
+                Opacity = 1;
                 return;
             }
             if (string.IsNullOrWhiteSpace(login))
             {
                 messageBox = new Custom.CustomMessageBox("Пожалуйста, введите логин.", "Ошибка", MessageBoxImage.Warning);
+                Opacity = 0.4;
                 messageBox.ShowDialog();
+                Opacity = 1;
                 return;
             }
             if (string.IsNullOrWhiteSpace(password))
             {
                 messageBox = new Custom.CustomMessageBox("Пожалуйста, введите пароль.", "Ошибка", MessageBoxImage.Warning);
+                Opacity = 0.4;
                 messageBox.ShowDialog();
+                Opacity = 1;
                 return;
             }
             #endregion
@@ -55,19 +61,25 @@ namespace BusNetworkSystem.Pages.LoginRegistration
                 if (password == "1")
                 {
                     messageBox = new Custom.CustomMessageBox("Вход выполнен успешно!", "Успех", MessageBoxImage.Information);
+                    Opacity = 0.4;
                     messageBox.ShowDialog();
+                    Opacity = 1;
                     mainWindow.main.Navigate(new SchedulePage(mainWindow));
                 }
                 else 
                 { 
                     messageBox = new Custom.CustomMessageBox("Неверный пароль.", "Ошибка", MessageBoxImage.Error);
+                    Opacity = 0.4;
                     messageBox.ShowDialog();
+                    Opacity = 1;
                 }
             }
             else
             {
                 messageBox = new Custom.CustomMessageBox("Неверный логин.", "Ошибка", MessageBoxImage.Error);
+                Opacity = 0.4;
                 messageBox.ShowDialog();
+                Opacity = 1;
             }
         }
         private void RegisterButton_Click(object sender, RoutedEventArgs e)

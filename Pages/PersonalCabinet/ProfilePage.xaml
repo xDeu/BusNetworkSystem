@@ -144,6 +144,7 @@
                                 FontSize="14"
                                 Cursor="Hand"
                                 Grid.Row="0" Grid.Column="2"
+                                Click="NameChange"
                                 Style="{StaticResource RegularButton}"/>
 
                             <!-- Электронная почта -->
@@ -158,6 +159,7 @@
                                 Cursor="Hand"
                                 Grid.Row="1"
                                 Grid.Column="2"
+                                Click="MailChange"
                                 Style="{StaticResource RegularButton}"/>
 
                             <!-- Номер телефона -->
@@ -172,6 +174,7 @@
                                 Cursor="Hand"
                                 Grid.Row="2"
                                 Grid.Column="2"
+                                Click="PhoneChange"
                                 Style="{StaticResource RegularButton}"/>
                             <!-- Пароль -->
                             <TextBlock Text="Пароль:" 
@@ -221,6 +224,7 @@
                                 Grid.Row="4"
                                 Grid.Column="0" 
                                 Grid.ColumnSpan="3"
+                                Click="PasswordChange"
                                 Style="{StaticResource RegularButton}"/>
                         </Grid>
                         <Grid VerticalAlignment="Center" 
