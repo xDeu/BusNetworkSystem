@@ -29,6 +29,10 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
         private void TopupAmount_TextChanged(object sender, TextChangedEventArgs e)
         {
             PlaceholderText.Visibility = string.IsNullOrEmpty(TopupAmount.Text) ? Visibility.Visible : Visibility.Collapsed;
+            if (!string.IsNullOrEmpty(TopupAmount.Text))
+                btnOK.IsEnabled = true;
+            else btnOK.IsEnabled = false;
+                
         }
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
@@ -41,6 +45,11 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
             messageBox = new CustomMessageBox("Операция выполнена.", "Выполнено!", MessageBoxImage.Exclamation);
             messageBox.ShowDialog();
             this.Close();
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

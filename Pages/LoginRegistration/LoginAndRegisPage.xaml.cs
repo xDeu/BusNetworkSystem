@@ -132,8 +132,7 @@ namespace BusNetworkSystem.Pages.LoginRegistration
         #region Это обязательное поле
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            var textBox = sender as TextBox;
-            if (textBox != null && textBox.BorderBrush == Brushes.Red)
+            if (sender is TextBox textBox && textBox.BorderBrush == Brushes.Red)
             {
                 textBox.Clear();
                 textBox.BorderBrush = Brushes.Black;
@@ -143,8 +142,7 @@ namespace BusNetworkSystem.Pages.LoginRegistration
 
         private void PasswordBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            var passwordBox = sender as PasswordBox;
-            if (passwordBox != null && passwordBox.BorderBrush == Brushes.Red)
+            if (sender is PasswordBox passwordBox && passwordBox.BorderBrush == Brushes.Red)
             {
                 passwordBox.Clear();
                 passwordBox.BorderBrush = Brushes.Black;
@@ -154,8 +152,7 @@ namespace BusNetworkSystem.Pages.LoginRegistration
 
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            var textBox = sender as TextBox;
-            if (textBox != null && string.IsNullOrWhiteSpace(textBox.Text))
+            if (sender is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
             {
                 textBox.BorderBrush = Brushes.Red;
                 GetErrorMessageTextBlock(textBox).Visibility = Visibility.Visible;
@@ -165,8 +162,7 @@ namespace BusNetworkSystem.Pages.LoginRegistration
 
         private void PasswordBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            var passwordBox = sender as PasswordBox;
-            if (passwordBox != null && string.IsNullOrWhiteSpace(passwordBox.Password))
+            if (sender is PasswordBox passwordBox && string.IsNullOrWhiteSpace(passwordBox.Password))
             {
                 passwordBox.BorderBrush = Brushes.Red;
                 ErrorMessage2.Visibility = Visibility.Visible;
@@ -176,8 +172,7 @@ namespace BusNetworkSystem.Pages.LoginRegistration
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var textBox = sender as TextBox;
-            if (textBox != null && !string.IsNullOrWhiteSpace(textBox.Text))
+            if (sender is TextBox textBox && !string.IsNullOrWhiteSpace(textBox.Text))
             {
                 textBox.BorderBrush = Brushes.Black;
                 GetErrorMessageTextBlock(textBox).Visibility = Visibility.Collapsed;
@@ -194,8 +189,7 @@ namespace BusNetworkSystem.Pages.LoginRegistration
         #endregion
         private void TogglePasswordVisibility(object sender, RoutedEventArgs e)
         {
-            Button button = sender as Button;
-            if (button == null) return;
+            if (!(sender is Button button)) return;
 
             // Определяем, какой PasswordBox и TextBox связаны с этой кнопкой
             if (button == ShowLoginPasswordButton)

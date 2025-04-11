@@ -11,8 +11,11 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent">
-    <Border CornerRadius="15"
-            Background="#211F22"
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="10" 
+                      CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Border Background="#211F22"
             Effect="{StaticResource DropShadowEffect}">
         <Grid>
             <TextBlock x:Name="IconText"

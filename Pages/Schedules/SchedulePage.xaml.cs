@@ -79,5 +79,11 @@ namespace BusNetworkSystem.Pages.Schedules
                 mainWindow.main.Navigate(new LoginAndRegisPage(mainWindow));
             }
         }
+
+        private void BuyTicketButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var item = button.Tag as string;
+        }
     }
 }

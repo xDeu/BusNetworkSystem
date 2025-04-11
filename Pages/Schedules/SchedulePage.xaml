@@ -215,6 +215,18 @@
                         <DataGridTextColumn Header="Свободных мест"
                                              Binding="{Binding AvailibleSeats}"
                                              Width="*"/>
+                        <DataGridTemplateColumn Header=""
+                                                Width="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Купить"
+                                            x:Name="BuyTicketButton"
+                                            Click="BuyTicketButton_Click"
+                                            Tag="{Binding}"
+                                            Width="80"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

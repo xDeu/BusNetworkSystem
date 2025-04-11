@@ -6,10 +6,16 @@
         xmlns:local="clr-namespace:BusNetworkSystem"
         mc:Ignorable="d"
         Background="Transparent"
+        BorderBrush="Transparent"
         WindowStartupLocation="CenterScreen"
-        Title="Пополнение баланса" Height="200" Width="430">
-    <Border CornerRadius="0,0,5,5"
-            BorderBrush="Transparent"
+        WindowStyle="None"
+        Title="Пополнение баланса" Height="200" Width="430"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="10" 
+                      CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Border BorderBrush="Transparent"
             Background="#211F22"
             Effect="{StaticResource DropShadowEffect}">
         <Grid Margin="5">
@@ -20,13 +26,12 @@
             <TextBox x:Name="TopupAmount"
                          Background="#211F22"
                          Foreground="#DCDCDC"
-                         BorderBrush="Transparent"
                          Height="25"
-                         Opacity="0"
-                         Margin="15,5,15,0" TextChanged="TopupAmount_TextChanged"/>
+                         Margin="15,5,15,0" TextChanged="TopupAmount_TextChanged" SelectionBrush="{x:Null}" FontSize="14"/>
             <TextBlock x:Name="PlaceholderText"
                            Text="Введите сумму..."
                            Foreground="#888888"
+                           Background="Transparent"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
                            Margin="16,0,0,0"
@@ -58,17 +63,19 @@
                     <ColumnDefinition Width="1.5*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <local:RotatingIconButton ButtonText="Пополнить"
+                <local:RotatingIconButton x:Name="btnOK"
+                                          ButtonText="Пополнить"
                                           Background="#211F22"
-                                          Margin="15"
+                                          Margin="10"
                                           Height="30"
                                           Width="180"
                                           HorizontalAlignment="Center"
                                           Grid.Column="0"
+                                          IsEnabled="False"
                                           Effect="{StaticResource DropShadowEffect}" Click="RotatingIconButton_Click"/>
                 <Button x:Name="GoBackButton"
                         Content="Отмена"
-                        Margin="15"
+                        Margin="10"
                         Grid.Column="1"
                         Click="GoBackButton_Click"/>
             </Grid>

@@ -74,6 +74,9 @@
     <Compile Include="Pages\PersonalCabinet\TopupBalance.xaml.cs">
       <DependentUpon>TopupBalance.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Schedules\BuyingTicket.xaml.cs">
+      <DependentUpon>BuyingTicket.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RotatingIconButton.xaml.cs">
       <DependentUpon>RotatingIconButton.xaml</DependentUpon>
     </Compile>
@@ -116,11 +119,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Schedules\BuyingTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Schedules\SchedulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RotatingIconButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\BoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ButtonStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

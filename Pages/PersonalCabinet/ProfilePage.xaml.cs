@@ -76,7 +76,9 @@ namespace BusNetworkSystem.Pages.PersonalCabinet
         private void RotatingIconButton_Click(object sender, RoutedEventArgs e)
         {
             _t = new TopupBalance();
-            _t.Show();  
+            this.Opacity = 0.4;
+            _t.ShowDialog();
+            this.Opacity = 1;
         }
     }
 }
