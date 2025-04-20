@@ -1,5 +1,4 @@
-﻿using BusNetworkSystem.Pages.LoginRegistration;
-using System.Windows;
+﻿using System.Windows;
 
 namespace BusNetworkSystem
 {
@@ -10,8 +9,7 @@ namespace BusNetworkSystem
     {
         public MainWindow()
         {
-            InitializeComponent();
-            main.Navigate(new LoginAndRegisPage(this));
+
         }
     }
 }

@@ -6,9 +6,61 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
-                <ResourceDictionary Source="Styles/BoxStyles.xaml"/>
+                <ResourceDictionary Source="/BusNetworkSystem;component/Views/Controls/RoundedButton.xaml"/>
+                <ResourceDictionary Source="Views/Controls/BusyIndicator.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <Color x:Key="AccentColorValue">#D74106</Color>
+            <SolidColorBrush x:Key="AccentColor" Color="{StaticResource AccentColorValue}"/>
+            <Color x:Key="BackgroundColorValue">#211F22</Color>
+            <SolidColorBrush x:Key="BackgroundColor" Color="{StaticResource BackgroundColorValue}"/>
+            <Color x:Key="LightColorValue">#DCDCDC</Color>
+            <SolidColorBrush x:Key="LightColor" Color="{StaticResource LightColorValue}"/>
+
+            <Style x:Key="TextButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Padding" Value="6 2"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock Text="{TemplateBinding Content}" 
+                               Foreground="{TemplateBinding Foreground}"/>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="{StaticResource AccentColor}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="TextBoxStyle" TargetType="TextBox">
+                <Setter Property="Background" Value="#3A393C"/>
+                <Setter Property="Foreground" Value="{StaticResource LightColor}"/>
+                <Setter Property="BorderBrush" Value="#5A595C"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Padding" Value="8"/>
+                <Setter Property="CaretBrush" Value="{StaticResource LightColor}"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
+                    </Trigger>
+                    <Trigger Property="IsFocused" Value="True">
+                        <Setter Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="PasswordBoxStyle" TargetType="PasswordBox">
+                <Setter Property="Background" Value="#3A393C"/>
+                <Setter Property="Foreground" Value="{StaticResource LightColor}"/>
+                <Setter Property="BorderBrush" Value="#5A595C"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Padding" Value="8"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

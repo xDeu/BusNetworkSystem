@@ -1,0 +1,151 @@
+﻿<Page x:Class="BusNetworkSystem.Views.Auth.AuthView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BusNetworkSystem.Views.Auth"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Автовокзал - авторизация"
+      Background="{StaticResource BackgroundColor}">
+    <!-- Анимации -->
+    <Page.Resources>
+        <Storyboard x:Key="LoginToRegisterAnimation">
+            <!-- Исчезает панель входа -->
+            <DoubleAnimation Storyboard.TargetName="LoginPanel"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="1" To="0" Duration="0:0:0.3"/>
+            <ThicknessAnimation Storyboard.TargetName="LoginPanel"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="0" To="-300,0,0,0" Duration="0:0:0.3"/>
+
+            <!-- Появляется панель регистрации -->
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RegisterPanel"
+                                              Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation Storyboard.TargetName="RegisterPanel"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="0" To="1" Duration="0:0:0.3" BeginTime="0:0:0.3"/>
+            <ThicknessAnimation Storyboard.TargetName="RegisterPanel"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="300,0,0,0" To="0" Duration="0:0:0.3" BeginTime="0:0:0.3"/>
+        </Storyboard>
+
+        <Storyboard x:Key="RegisterToLoginAnimation">
+            <!-- Исчезает панель регистрации -->
+            <DoubleAnimation Storyboard.TargetName="RegisterPanel"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="1" To="0" Duration="0:0:0.3"/>
+            <ThicknessAnimation Storyboard.TargetName="RegisterPanel"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="0" To="300,0,0,0" Duration="0:0:0.3"/>
+
+            <!-- Появляется панель входа -->
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LoginPanel"
+                                              Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation Storyboard.TargetName="LoginPanel"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="0" To="1" Duration="0:0:0.3" BeginTime="0:0:0.3"/>
+            <ThicknessAnimation Storyboard.TargetName="LoginPanel"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-300,0,0,0" To="0" Duration="0:0:0.3" BeginTime="0:0:0.3"/>
+        </Storyboard>
+    </Page.Resources>
+    <Grid>
+        <!-- Контейнер для панелей -->
+        <Grid x:Name="AuthContainer" ClipToBounds="True">
+            <!-- Панель входа -->
+            <Border x:Name="LoginPanel"
+                    Background="#2E2D30"
+                    CornerRadius="10"
+                    Width="300"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Вход в систему"
+                               Foreground="{StaticResource LightColor}"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Margin="0 0 0 20"/>
+
+                    <TextBox Text="{Binding Username}"
+                             Style="{StaticResource TextBoxStyle}"
+                             Margin="0 0 0 10"
+                             Tag="Логин"/>
+
+                    <PasswordBox x:Name="PasswordBox"
+                                 Style="{StaticResource PasswordBoxStyle}"
+                                 Margin="0 0 0 20"
+                                 Tag="Парлоль"/>
+
+                    <Button Content="Войти"
+                            Command="{Binding LoginCommand}"
+                            Style="{StaticResource RoundedButtonStyle}"
+                            Margin="0 0 0 10"/>
+
+                    <Button Content="Зарегистрироваться"
+                            Command="{Binding SwitchToRegisterCommand}"
+                            Style="{StaticResource RoundedButtonStyle}"/>
+
+                    <Button Content="Войти как гость"
+                            Command="{Binding GuestLoginCommand}"
+                            Style="{StaticResource TextButtonStyle}"
+                            Margin="0 10 0 0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Панель регистрации -->
+            <Border x:Name="RegisterPanel"
+                    Background="#2E2D30"
+                    CornerRadius="10"
+                    Width="300"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Padding="20"
+                    Opacity="0"
+                    Visibility="Collapsed">
+                <StackPanel>
+                    <TextBlock Text="Регистрация"
+                               Foreground="{StaticResource LightColor}"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Margin="0 0 0 20"/>
+
+                    <TextBox Text="{Binding RegisterUsername}"
+                             Style="{StaticResource TextBoxStyle}"
+                             Margin="0 0 0 10"
+                             Tag="Логин"/>
+
+                    <PasswordBox x:Name="RegisterPasswordBox"
+                                 Style="{StaticResource PasswordBoxStyle}"
+                                 Margin="0 0 0 10"
+                                 Tag="Пароль"/>
+
+                    <PasswordBox x:Name="ConfirmPasswordBox"
+                                 Style="{StaticResource PasswordBoxStyle}"
+                                 Margin="0 0 0 10"
+                                 Tag="Подтвердите пароль"/>
+
+                    <TextBox Text="{Binding Email}"
+                             Style="{StaticResource TextBoxStyle}"
+                             Margin="0 0 0 20"
+                             Tag="Email"/>
+
+                    <Button Content="Зарегистрироваться"
+                            Command="{Binding RegisterCommand}"
+                            Style="{StaticResource RoundedButtonStyle}"
+                            Margin="0 0 0 10"/>
+
+                    <Button Content="Назад к входу"
+                            Command="{Binding SwitchToLoginCommand}"
+                            Style="{StaticResource TextButtonStyle}"
+                            Foreground="{StaticResource LightColor}"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

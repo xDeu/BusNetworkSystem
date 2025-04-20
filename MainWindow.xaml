@@ -5,10 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusNetworkSystem"
         mc:Ignorable="d"
-        Title="Автовокзал г. Йошкар-Ола" Background="Transparent" Height="800" Width="1200" 
-        WindowStartupLocation="CenterScreen" 
-        Icon="Icons/bus_vehicle_icon_264197.ico">
+        Title="Автовокзал г. Йошкар-Ола" Background="Transparent" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        <Frame x:Name="main" NavigationUIVisibility="Hidden"/>
+        
     </Grid>
 </Window>
